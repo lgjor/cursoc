@@ -1,4 +1,4 @@
-# Curso de Lógica de Programação e Algoritmos com C
+# Curso: Lógica de Programação e Algoritmos com C
 
 Professor Gustavo Caetano
 
