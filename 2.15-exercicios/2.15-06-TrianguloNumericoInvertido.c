@@ -28,11 +28,11 @@ int lerNumeroValido(int min, int max) {
 int main() {
     int min = 1;
     int max = INT_MAX;
-    int n = lerNumeroValido(min, max);
-    for (int line = 1; line <= n; line++) {
+    int numberOfLines = lerNumeroValido(min, max);
+    for (int line = numberOfLines; line > 0; line--) {
         for (int col = 1; col <= line; col++) {
             printf("%d ", col);
         }
         printf("\n");
-    }
+    }    
 }

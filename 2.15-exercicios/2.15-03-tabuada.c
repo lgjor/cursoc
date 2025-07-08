@@ -27,7 +27,7 @@ int lerNumeroValido(int min, int max) {
 
 int main() {
     int min = 0;
-    int max = 10;
+    int max = INT_MAX;
     int n = lerNumeroValido(min, max);
     for (int i = 0; i <= 10; i++) {
         printf("%d * %d = %d\n", n, i, n * i);

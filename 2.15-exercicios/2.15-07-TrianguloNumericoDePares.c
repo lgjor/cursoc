@@ -29,9 +29,12 @@ int main() {
     int min = 1;
     int max = INT_MAX;
     int n = lerNumeroValido(min, max);
-    for (int line = 1; line <= n; line++) {
+    int numeroParAtual = 2;
+    int nLines = n;
+    for (int line = 1; line <= nLines; line++) {
         for (int col = 1; col <= line; col++) {
-            printf("%d ", col);
+            printf("%d ", numeroParAtual);
+            numeroParAtual += 2;
         }
         printf("\n");
     }
