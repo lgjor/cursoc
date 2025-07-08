@@ -27,11 +27,9 @@ int lerNumeroValido(int min, int max) {
 
 int main() {
     int quantidadeARegistrar;
-    int resultado_scanf;
     int min = 1;
     int max = INT_MAX;
-    bool entrada_valida = false; // Flag para controlar o loop de validação
-    
+        
     printf("---------- Controle de Revisão de Carros ----------\n");
     printf("Quantos carros serão registrados? ");
     quantidadeARegistrar = lerNumeroValido(min, max);
