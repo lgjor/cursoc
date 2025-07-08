@@ -25,29 +25,21 @@ int lerNumeroValido(int min, int max) {
     return numero; // Retorna o número válido
 }
 
+// Piramide de asteriscos centralizada como uma árvore de natal
 int main() {
-    int quantidadeACadastrar;
-    int resultado_scanf;
-    int min = 1;
-    int max = INT_MAX;
-    bool entrada_valida = false; // Flag para controlar o loop de validação
-    
-    printf("---------- Édicasa Controle de estoque ----------\n");
-    printf("Quantos produtos deseja cadastrar? ");
-    quantidadeACadastrar = lerNumeroValido(min, max);
+    printf("Informe a altura do triangulo: ");
+    int altura = lerNumeroValido(1, INT_MAX);
+    int largura = ( altura * 2 ) - 1;
 
-    for(int produto = 0; produto < quantidadeACadastrar; produto++){
-        printf("Produto %d\n", produto + 1);
-        printf("Digite o nome do produto: ");
-        char nome[100];
-        scanf("%s", nome);
-        printf("Digite a quantidade em estoque: ");
-        int quantidadeEstoque = lerNumeroValido(min, max);
-        printf("Digite a quantidade minima: ");
-        int quantidadeMinima = lerNumeroValido(min, max);
-        if (quantidadeEstoque < quantidadeMinima){
-            printf("O produto %s precisa ser reposto! (Estoque: %d, Mínimo: %d)\n", nome, quantidadeEstoque, quantidadeMinima);
+    for (int linhaAtual = 1; linhaAtual <= altura; linhaAtual++){    
+        int asteriscos = linhaAtual * 2 - 1;
+        int espacos = (largura - asteriscos)/2;
+        for (int i = 0; i < espacos; i++) {
+            printf(" ");
+        }   
+        for (int i = 0; i < asteriscos; i++) {
+            printf("*");
         }
-    }
-
-}
+        printf("\n");
+   }
+} 
