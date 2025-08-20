@@ -1,0 +1,1 @@
+Escreva uma função que retorne se um número é par ou ímpar.
