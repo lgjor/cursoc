@@ -29,19 +29,12 @@ int lerNumeroValido(int min, int max) {
 }
 
 int main() {
-    printf("Informe a altura do triangulo: ");
-    int altura = lerNumeroValido(1, INT_MAX);
-    int largura = ( altura * 2 ) - 1;
-
-    for (int linhaAtual = 1; linhaAtual <= altura; linhaAtual++){    
-        int asteriscos = linhaAtual * 2 - 1;
-        int espacos = (largura - asteriscos)/2;
-        for (int i = 0; i < espacos; i++) {
-            printf(" ");
-        }   
-        for (int i = 0; i < asteriscos; i++) {
-            printf("*");
-        }
-        printf("\n");
-   }
-} 
+    const int numero_secreto = 7;
+    int palpite, rodadas = 0;
+    do{
+        printf("Qual o número secreto? ");
+        palpite = lerNumeroValido(1, INT_MAX);
+        rodadas++;
+    } while (palpite != numero_secreto);
+        printf("Você acertou em %d rodadas!\n", rodadas);
+}
