@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <limits.h>
+#include <string.h>
 
 int lerNumeroValido(int min, int max) {
     int numero;
@@ -8,7 +9,6 @@ int lerNumeroValido(int min, int max) {
     bool entrada_valida = false; // Flag para controlar o loop de validação
 
     do {
-        printf("Digite o número N para calcular a soma de 1 a N: ");
         resultado_scanf = scanf("%d", &numero); // Tenta ler o número inteiro
 
         // Verifica se a leitura falhou (não foi um número) ou se o número está fora do intervalo
@@ -25,13 +25,21 @@ int lerNumeroValido(int min, int max) {
     return numero; // Retorna o número válido
 }
 
+// Piramide de asteriscos centralizada como uma árvore de natal
 int main() {
-    int min = 1;
-    int max = INT_MAX;
-    int n = lerNumeroValido(min, max);
-    int soma = 0;
-    for (int i = 1; i <= n; i++) {
-        soma += i;
-    }
-    printf("A soma de 1 a %d é: %d\n", n, soma);
-}
+    printf("Informe a altura do triangulo: ");
+    int altura = lerNumeroValido(1, INT_MAX);
+    int largura = ( altura * 2 ) - 1;
+
+    for (int linhaAtual = 1; linhaAtual <= altura; linhaAtual++){    
+        int asteriscos = linhaAtual * 2 - 1;
+        int espacos = (largura - asteriscos)/2;
+        for (int i = 0; i < espacos; i++) {
+            printf(" ");
+        }   
+        for (int i = 0; i < asteriscos; i++) {
+            printf("*");
+        }
+        printf("\n");
+   }
+} 

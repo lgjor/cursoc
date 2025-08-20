@@ -8,7 +8,7 @@ int lerNumeroValido(int min, int max) {
     bool entrada_valida = false; // Flag para controlar o loop de validação
 
     do {
-        printf("Digite o número N para calcular a soma de 1 a N: ");
+        printf("Digite o número N para calcular a tabuada: ");
         resultado_scanf = scanf("%d", &numero); // Tenta ler o número inteiro
 
         // Verifica se a leitura falhou (não foi um número) ou se o número está fora do intervalo
@@ -26,12 +26,10 @@ int lerNumeroValido(int min, int max) {
 }
 
 int main() {
-    int min = 1;
+    int min = 0;
     int max = INT_MAX;
     int n = lerNumeroValido(min, max);
-    int soma = 0;
-    for (int i = 1; i <= n; i++) {
-        soma += i;
-    }
-    printf("A soma de 1 a %d é: %d\n", n, soma);
+    for (int i = 0; i <= 10; i++) {
+        printf("%d * %d = %d\n", n, i, n * i);
+    }        
 }

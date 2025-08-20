@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <limits.h>
+#include <string.h>
 
 int lerNumeroValido(int min, int max) {
     int numero;
@@ -8,7 +9,6 @@ int lerNumeroValido(int min, int max) {
     bool entrada_valida = false; // Flag para controlar o loop de validação
 
     do {
-        printf("Digite o número N para calcular a soma de 1 a N: ");
         resultado_scanf = scanf("%d", &numero); // Tenta ler o número inteiro
 
         // Verifica se a leitura falhou (não foi um número) ou se o número está fora do intervalo
@@ -26,12 +26,28 @@ int lerNumeroValido(int min, int max) {
 }
 
 int main() {
+    int quantidadeACadastrar;
+    int resultado_scanf;
     int min = 1;
     int max = INT_MAX;
-    int n = lerNumeroValido(min, max);
-    int soma = 0;
-    for (int i = 1; i <= n; i++) {
-        soma += i;
+    bool entrada_valida = false; // Flag para controlar o loop de validação
+    
+    printf("---------- Édicasa Controle de estoque ----------\n");
+    printf("Quantos produtos deseja cadastrar? ");
+    quantidadeACadastrar = lerNumeroValido(min, max);
+
+    for(int produto = 0; produto < quantidadeACadastrar; produto++){
+        printf("Produto %d\n", produto + 1);
+        printf("Digite o nome do produto: ");
+        char nome[100];
+        scanf("%s", nome);
+        printf("Digite a quantidade em estoque: ");
+        int quantidadeEstoque = lerNumeroValido(min, max);
+        printf("Digite a quantidade minima: ");
+        int quantidadeMinima = lerNumeroValido(min, max);
+        if (quantidadeEstoque < quantidadeMinima){
+            printf("O produto %s precisa ser reposto! (Estoque: %d, Mínimo: %d)\n", nome, quantidadeEstoque, quantidadeMinima);
+        }
     }
-    printf("A soma de 1 a %d é: %d\n", n, soma);
+
 }
